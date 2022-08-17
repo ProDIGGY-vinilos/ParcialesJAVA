@@ -5,6 +5,15 @@ public class Menu {
 	private double unitCost;
 	private int quantity;
 	
+	
+	public Menu(String name, double unitCost, int quantity) {
+		super();
+		this.name = name;
+		this.unitCost = unitCost;
+		this.quantity = quantity;
+	}
+	public  Menu() {}
+	
 	public String getName() {
 		return name;
 	}

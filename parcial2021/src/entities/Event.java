@@ -1,10 +1,12 @@
 package entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
-public class Event {
+public abstract class Event {
 	private LocalDateTime eventDate;
 	private String location;
+	private ArrayList<Service> services = new ArrayList<Service>();
 	public LocalDateTime getEventDate() {
 		return eventDate;
 	}
@@ -17,4 +19,19 @@ public class Event {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	public void cargaServicios(Service service_) {
+		this.services.add(service_);
+	}
+	
+	public double getServicesCost() {
+		double costoServicios = 0;
+		for (Service service : services) {
+			costoServicios = costoServicios + service.getCost();
+		}
+		return costoServicios;
+	}
+	
+	public abstract double getOveralCost() ;
+	
+	
 }
