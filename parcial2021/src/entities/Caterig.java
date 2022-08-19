@@ -2,8 +2,6 @@ package entities;
 
 import java.util.ArrayList;
 
-import javax.management.loading.PrivateClassLoader;
-
 
 public class Caterig extends Event {
 	private double fixedCost;
