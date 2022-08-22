@@ -50,10 +50,8 @@ public class Chofer extends Empleado {
 	public double getSueldo() {
 		// TODO Auto-generated method stub
 		double total = 0;
-		int viajesHechos = 0;
-		ArrayList<Viaje> viajes = new ArrayList<Viaje>();
-		viajes = this.getViajesDelMes();
-		for (Viaje viaje : viajes) {
+		int viajesHechos = 0;		
+		for (Viaje viaje : getViajesDelMes()) {
 			viajesHechos = viajesHechos++;
 		}
 		
