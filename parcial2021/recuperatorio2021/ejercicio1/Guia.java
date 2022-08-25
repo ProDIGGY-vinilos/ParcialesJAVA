@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Guia extends Empleado {
 	private String disponibilidad;
 	private double valorHora;
+	private ArrayList<Viaje> viajes = new ArrayList<>();
 	public String getDisponibilidad() {
 		return disponibilidad;
 	}
@@ -19,16 +20,14 @@ public class Guia extends Empleado {
 	}
 	
 	public ArrayList<Viaje> getViajesDelMes(){
-		ArrayList<Viaje> viajes = new ArrayList<>();
+		
 		return viajes;
 	}
 	@Override
 	public double getSueldo() {
 		double total=0;
-		double horasviaje = 0;
-		ArrayList<Viaje> viajes = new ArrayList<Viaje>();
-		viajes = this.getViajesDelMes();
-		for (Viaje viaje : viajes) {
+		double horasviaje = 0;				
+		for (Viaje viaje : this.getViajesDelMes()) {
 			horasviaje = horasviaje + viaje.getDuracionHs();
 		}
 		total = total + (horasviaje * this.getValorHora()) + this.getSueldoBase() ;

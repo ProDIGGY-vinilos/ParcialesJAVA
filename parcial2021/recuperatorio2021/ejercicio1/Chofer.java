@@ -50,12 +50,7 @@ public class Chofer extends Empleado {
 	public double getSueldo() {
 		// TODO Auto-generated method stub
 		double total = 0;
-		int viajesHechos = 0;		
-		for (Viaje viaje : getViajesDelMes()) {
-			viajesHechos = viajesHechos++;
-		}
-		
-		if (viajesHechos >= this.getCantViajesPremio()) {
+		if (this.getViajesDelMes().size() >= this.getCantViajesPremio()) {
 			total = this.getSueldoBase() + this.getPremio();
 		}
 		return total;
